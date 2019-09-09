@@ -14,3 +14,10 @@ compile
 run
 clean
 run
+clean
+sbt tests
+tests
+test
+clean
+test
+exit

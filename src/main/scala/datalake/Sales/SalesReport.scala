@@ -47,7 +47,7 @@ object SalesReport extends SparkConfig{
     groupedSalesData.show()
 
     //groupedSalesData.write.parquet(outputPath)
-   // groupedSalesData.write.csv(outputPath)
+    groupedSalesData.write.csv(outputPath)
 
   }
 
@@ -92,8 +92,7 @@ object SalesReport extends SparkConfig{
       """.stripMargin
     )
 
-    //transposeSales.filter('country === "United Kingdom" && 'itemType === "Cereal")
-    transposeSales
+    transposeSales.filter('country === "United Kingdom" && 'itemType === "Cereal")
   }
 
 

@@ -16,9 +16,14 @@ class SalesReportTest extends DefaultFeatureSpecWithSpark {
 
      // val rootDirectory = Files.createTempDirectory(this.getClass.getName)
      // val inputFile = Files.createFile(rootDirectory.resolve("input.txt"))
-     // val outputDirectory = rootDirectory.resolve("output")
-     val outputPath = "./target/test-" + "sales"
+      // val inputFile = Files.createFile(rootDirectory.resolve("input.txt"))
+      val inputFile =  "./src/test/resources/Sales.csv"
+      // val outputDirectory = rootDirectory.resolve("output")
+      val outputPath = "./target/test-" + "sales"
       import scala.collection.JavaConverters._
+       SalesReport.run(spark,
+         inputFile,
+         outputPath)
       val expectedLines:Array[Row] = Array(Row("United Kingdom","Cereal",22180.0,4562426.0,15558.0,3200280.6))
       println(expectedLines.mkString(","))
       val firstDataSet:Dataset[Row] = spark.read.csv(outputPath)
