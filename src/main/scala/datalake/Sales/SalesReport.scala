@@ -3,12 +3,8 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 import datalake.schema.salesSchema._
 import java.time.LocalDateTime
-
 import datalake.config.SparkConfig
 import org.apache.log4j.{Level, LogManager, Logger}
-
-
-
 
 
 object SalesReport extends SparkConfig{
